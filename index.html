@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>同期deフェスビンゴ</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- ここから追加 -->
+    <link rel="manifest" href="manifest.json">
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js');
+      }
+    </script>
+    <!-- ここまで追加 -->
+</head>
+<body>
+    <h1>同期deフェスビンゴ</h1>
+    <p style="text-align:center; color:#555; margin-top:8px;">同期にあったら、〇をタップしてね</p>
+    <div id="icon-popup" style="display:none;"></div>
+    <!-- ここから追加：30個の〇グリッド -->
+    <div id="circle-grid"></div>
+    <!-- ここまで追加 -->
+    <div id="bingo-overlay">
+      <img src="icons/bingo.png" id="bingo-img" alt="ビンゴ！">
+      <button id="close-bingo">閉じる</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
